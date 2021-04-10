@@ -15,15 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about',function(){
-    return view('about');
-});
+// Route::get('/about',function(){
+//     return view('about',['name'=>'welcome to']);
+// })-> middleware('age');
+
+Route::get('/contact', function () {
+    echo 'its contact';
+})->name('contact');
 
 Route::prefix('learnhunter')->group(function(){
 
-    Route::get('/contact', function(){
-        echo 'its comntact';
-    });
+    
     Route::get('/image', function(){
         echo 'its image';
     });
@@ -33,6 +35,6 @@ Route::prefix('learnhunter')->group(function(){
     
 });
 
-
+Route::get('/about', 'HelloController@someMethod');
 
 
