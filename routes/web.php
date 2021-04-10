@@ -20,7 +20,19 @@ Route::get('/about',function(){
 });
 
 Route::prefix('learnhunter')->group(function(){
+
     Route::get('/contact', function(){
         echo 'its comntact';
     });
+    Route::get('/image', function(){
+        echo 'its image';
+    });
+    Route::get('/name', function(){
+        echo 'its name';
+    });
+    
 });
+
+
+
+
