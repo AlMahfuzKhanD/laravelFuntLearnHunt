@@ -12,29 +12,33 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
 
 // Route::get('/about',function(){
 //     return view('about',['name'=>'welcome to']);
 // })-> middleware('age');
 
-Route::get('/contact', function () {
-    echo 'its contact';
-})->name('contact');
+// Route::get('/contact', function () {
+//     echo 'its contact';
+// })->name('contact');
 
-Route::prefix('learnhunter')->group(function(){
+// Route::prefix('learnhunter')->group(function(){
 
     
-    Route::get('/image', function(){
-        echo 'its image';
-    });
-    Route::get('/name', function(){
-        echo 'its name';
-    });
+//     Route::get('/image', function(){
+//         echo 'its image';
+//     });
+//     Route::get('/name', function(){
+//         echo 'its name';
+//     });
     
-});
+// });
 
-Route::get('/about', 'HelloController@someMethod');
+// Route::get('/about', 'HelloController@someMethod');
 
 

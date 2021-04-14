@@ -27,17 +27,20 @@
 
   <!-- Navigation -->
 
-  @yield('nav')
+{{ View::make('nav') }}
     
 
   <!-- Page Header -->
  
-
+  {{ View::make('header') }}
   <!-- Main Content -->
+  
+<div class="container">
   @yield('content')
+</div>
 
   <!-- Footer -->
-  
+  {{ View::make('footer') }}
 
 </body>
 

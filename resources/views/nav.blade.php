@@ -1,5 +1,5 @@
 
-@section('nav')
+
     
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -12,10 +12,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="{{ url('about') }}">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="post.html">Sample Post</a>
@@ -27,4 +27,3 @@
       </div>
     </div>
 </nav>
-  @endsection
