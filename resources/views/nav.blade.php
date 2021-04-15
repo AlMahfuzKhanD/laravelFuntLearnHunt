@@ -18,10 +18,10 @@
             <a class="nav-link" href="{{ url('about') }}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
+            <a class="nav-link" href="#">Write Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="{{ url('contact') }}">Contact</a>
           </li>
         </ul>
       </div>
