@@ -42,6 +42,10 @@ Route::get('/contact', function () {
     
 // });
 
-// Route::get('/about', 'HelloController@someMethod');
+//// category CRUE /////
+
+Route::get('/post', 'HelloController@writePost')->name('write.post');
+Route::get('/add_category', 'HelloController@addCategory')->name('add.category');
+Route::post('/store_category', 'HelloController@storeCategory')->name('store.category');
 
 

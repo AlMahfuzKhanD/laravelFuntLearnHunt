@@ -37,6 +37,33 @@
   <!-- Bootstrap core JavaScript -->
 <script src="{{asset('frontend/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('frontedn/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <!-- Custom scripts for this template -->
   <script src="{{asset('js/clean-blog.min.js')}}"></script>
+
+
+  <script>
+      @if (Session::has('message'))
+    var type="{{ Session::get('alert-type','info') }}"
+    switch(type){
+        case'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+        case'success':
+        toastr.success("{{ Session::get('message') }}");
+            break;
+        case'warning':
+        toastr.warning("{{ Session::get('message') }}");
+            break;
+        case'error':
+        toastr.error("{{ Session::get('message') }}");
+            break;
+        
+            
+      }
+      
+  @endif
+  </script>
+
+  

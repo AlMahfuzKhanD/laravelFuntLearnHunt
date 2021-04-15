@@ -18,7 +18,7 @@
             <a class="nav-link" href="{{ url('about') }}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Write Post</a>
+            <a class="nav-link" href="{{ route('write.post') }}">Write Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('contact') }}">Contact</a>
