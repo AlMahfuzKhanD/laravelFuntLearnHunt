@@ -47,5 +47,10 @@ Route::get('/contact', function () {
 Route::get('/post', 'HelloController@writePost')->name('write.post');
 Route::get('/add_category', 'HelloController@addCategory')->name('add.category');
 Route::post('/store_category', 'HelloController@storeCategory')->name('store.category');
+Route::get('/all_category', 'HelloController@allCategory')->name('all.category');
+Route::get('/view_category/{id}', 'HelloController@viewCategory');
+Route::get('/delete_category/{id}', 'HelloController@deleteCategory');
+Route::get('/edit_category/{id}', 'HelloController@editCategory');
+Route::post('/update_category/{id}', 'HelloController@updateCategory');
 
 

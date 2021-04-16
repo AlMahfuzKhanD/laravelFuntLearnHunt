@@ -12,6 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="{{asset('frontend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/css/sweetalert2.min.css')}}" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="{{asset('frontend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">

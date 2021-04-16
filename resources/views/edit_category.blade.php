@@ -24,12 +24,12 @@
                 </div>
             @endif
 
-            <form action="{{ route('store.category') }}" method="post">
+            <form action="{{ url('update_category/'.$data->id) }}" method="post">
                 @csrf
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Category Name</label>
-                        <input class="form-control"  type="text" name="name" placeholder="Category Name" >
+                        <input class="form-control"  type="text" name="name" value="{{ $data->name }}" >
                         
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Slug Name</label>
-                        <input class="form-control" name="slug" type="text" placeholder="Slug Name" >
+                        <input class="form-control" name="slug" type="text" value="{{ $data->slug }}" >
                         
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 
                 <br />
                 <div id="success"></div>
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-primary" type="submit">Update</button>
             </form>
         </div>
     </div>
