@@ -67,4 +67,13 @@ class PostController extends Controller
         ->get();
         return view('allpost', compact('post'));
     }
+
+    public function viewPost($id){
+        $post = DB::table('posts')
+        ->join('categories', 'posts.category_id', 'categories.id')
+        ->select('posts.*', 'categories.name')
+        ->where('posts.id',$id)
+        ->first();
+        return view('view_post', compact('post'));
+    }
 }
