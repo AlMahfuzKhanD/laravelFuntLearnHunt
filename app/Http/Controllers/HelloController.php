@@ -8,10 +8,7 @@ use DB;
 class HelloController extends Controller
 {
     //
-    public function writePost(){
-        
-        return view('writepost');
-    }
+    
 
     public function addCategory(){
         
@@ -25,8 +22,8 @@ class HelloController extends Controller
 
 
         $validatedData = $request->validate([
-            'name' => 'required|unique:categories|max:25|min:4',
-            'slug' => 'required|unique:categories|max:25|min:4',
+            'name' => 'required|unique:categories|max:25|min:3',
+            'slug' => 'required|unique:categories|max:25|min:3',
             
         ]);
 

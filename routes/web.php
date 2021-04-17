@@ -44,7 +44,7 @@ Route::get('/contact', function () {
 
 //// category CRUE /////
 
-Route::get('/post', 'HelloController@writePost')->name('write.post');
+
 Route::get('/add_category', 'HelloController@addCategory')->name('add.category');
 Route::post('/store_category', 'HelloController@storeCategory')->name('store.category');
 Route::get('/all_category', 'HelloController@allCategory')->name('all.category');
@@ -52,5 +52,11 @@ Route::get('/view_category/{id}', 'HelloController@viewCategory');
 Route::get('/delete_category/{id}', 'HelloController@deleteCategory');
 Route::get('/edit_category/{id}', 'HelloController@editCategory');
 Route::post('/update_category/{id}', 'HelloController@updateCategory');
+
+
+// Post CRUDE
+Route::get('/post', 'PostController@writePost')->name('write.post');
+Route::post('/store_post','PostController@store')->name('store.post');
+Route::get('/all_post','PostController@allPost')->name('all.post');
 
 

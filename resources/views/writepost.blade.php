@@ -11,9 +11,19 @@
             
                 <a href="{{ route('add.category') }}" class="btn btn-danger">Add Category</a>
                 <a href="{{ route('all.category') }}" class="btn btn-info">All Category</a>
+                <a href="{{ route('all.post') }}" class="btn btn-info">All Post</a>
             
             <hr>
-            <form id="contactForm" name="sentMessage" novalidate>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+                </ul>
+                </div>
+            @endif
+            <form action="{{ route('store.post') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
@@ -26,8 +36,11 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Category</label>
-                        <select name="category_id" class="form-control" id="">
-                            <option value="">option 1</option>
+                        <select name="category_id" class="form-control" name="category_id">
+                            @foreach ($category as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                            
                         </select>
                         
                     </div>
