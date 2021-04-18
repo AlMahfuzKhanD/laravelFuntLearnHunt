@@ -61,5 +61,6 @@ Route::get('/all_post','PostController@allPost')->name('all.post');
 Route::get('/view_post/{id}', 'PostController@viewPost');
 Route::get('/edit_post/{id}', 'PostController@editPost');
 Route::post('/update_post/{id}', 'PostController@updatePost');
+Route::get('/delete_post/{id}', 'PostController@deletePost');
 
 

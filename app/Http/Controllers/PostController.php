@@ -130,5 +130,28 @@ class PostController extends Controller
         }
     }
 
+    public function deletePost($id){
+        $post = DB::table('posts')->where('id',$id)->first();
+        $image = $post->image;
+        //return response()->json($image);
+        $delete = DB::table('posts')->where('id',$id)->delete();
+        if ($delete) {
+            # code...
+            unlink($image);
+            $notification = array(
+                'message'=>'Successfully Deleted',
+                'alert-type'=>'success'
+            );
+            return redirect()->route('all.post')->with($notification);
+        }else {
+            # code...
+            $notification = array(
+                'message'=>'Something went wrong',
+                'alert-type'=>'error'
+            );
+            return redirect()->route('all.post')->with($notification);
+        }
+    }
+
 
 } //end controller
