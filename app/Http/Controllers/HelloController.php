@@ -8,6 +8,14 @@ use DB;
 class HelloController extends Controller
 {
     //
+
+    public function index(){
+        $post = DB::table('posts')
+        ->join('categories','posts.category_id','categories.id')
+        ->select('posts.*','categories.name','categories.slug')
+        ->paginate(3);
+        return view('index',compact('post'));
+    }
     
 
     public function addCategory(){
