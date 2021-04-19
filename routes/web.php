@@ -62,3 +62,9 @@ Route::post('/update_post/{id}', 'PostController@updatePost');
 Route::get('/delete_post/{id}', 'PostController@deletePost');
 
 
+// Eloquent
+
+
+Route::get('/student', 'StudentController@student');
+
+Route::post('/store_student','StudentController@store')->name('store.student');
