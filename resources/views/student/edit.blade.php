@@ -25,12 +25,12 @@
                 </div>
             @endif
 
-            <form action="{{ route('store.student') }}" method="post">
+            <form action="{{ url('update_student/'.$student->id) }}" method="post">
                 @csrf
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Student Name</label>
-                        <input class="form-control"  type="text" name="name" placeholder="Student Name" >
+                        <input class="form-control"  type="text" name="name" value="{{ $student->name }}" >
                         
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Student email</label>
-                        <input class="form-control" name="email" type="email" placeholder="Student Email" >
+                        <input class="form-control" name="email" type="email" value="{{ $student->email }}" >
                         
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Student Phone</label>
-                        <input class="form-control" name="phone" type="number" placeholder="Student Phone" >
+                        <input class="form-control" name="phone" type="number" value="{{ $student->phone }}" >
                         
                     </div>
                 </div>

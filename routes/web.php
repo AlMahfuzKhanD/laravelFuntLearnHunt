@@ -65,6 +65,12 @@ Route::get('/delete_post/{id}', 'PostController@deletePost');
 // Eloquent
 
 
-Route::get('/student', 'StudentController@student');
+Route::get('/student', 'StudentController@create');
+
+Route::get('/all_student', 'StudentController@index')->name('all.student');
+Route::get('/view_student/{id}', 'StudentController@show');
+Route::get('/delete_student/{id}', 'StudentController@destroy');
+Route::get('/edit_student/{id}', 'StudentController@edit');
+Route::post('/update_student/{id}', 'StudentController@update');
 
 Route::post('/store_student','StudentController@store')->name('store.student');
