@@ -10,7 +10,7 @@
         <div class="col-lg-12  mx-auto">
             
                 
-                <a href="{{ url('student') }}" class="btn btn-info">Add Student</a>
+                <a href="{{ url('student/create') }}" class="btn btn-info">Add Student</a>
             
             <br><br>
 
@@ -19,6 +19,7 @@
             <table class="table">
                 <thead>
                   <tr>
+                    <th>Sl</th>
                     <th>Student Name</th>
                     <th>Student Email</th>
                     <th>Student Phone</th>
@@ -29,13 +30,19 @@
                 <tbody>
                   @foreach ($student as $item)
                   <tr>
+                    <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->phone }}</td>
                     <td>
-                      <a href="{{ URL::to('edit_student/'.$item->id) }}" class="btn btn-info">Edit</a>
-                      <a href="{{ URL::to('delete_student/'.$item->id) }}" class="btn btn-danger" id="delete">Delete</a>
-                      <a href="{{ URL::to('view_student/'.$item->id) }}" class="btn btn-success">View</a>
+                      <a href="{{ url('student/'.$item->id.'/edit') }}" class="btn btn-info">Edit</a>
+                      <form action="{{ url('student/'.$item->id) }}" method="post">
+                          @csrf
+                          @method("DELETE")
+                          <button class="btn btn-danger" type="submit">Delete</button>
+                      </form>
+                      {{-- <a href="{{ URL::to('student/'.$item->id) }}" class="btn btn-danger" id="delete">Delete</a> --}}
+                      <a href="{{ URL::to('student/'.$item->id) }}" class="btn btn-success">View</a>
                     </td>
                     
                   </tr> 

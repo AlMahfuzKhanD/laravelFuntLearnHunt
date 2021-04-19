@@ -10,10 +10,10 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             
                 
-                <a href="{{ route('all.student') }}" class="btn btn-info">All Student</a>
+                <a href="{{ url('student') }}" class="btn btn-info">All Student</a>
             
             <hr><br>
-            <h3>Student Insert</h3>
+            <h3>Student Update</h3>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -25,8 +25,9 @@
                 </div>
             @endif
 
-            <form action="{{ url('update_student/'.$student->id) }}" method="post">
+            <form action="{{ url('student/'.$student->id) }}" method="post">
                 @csrf
+                @method('PUT')
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Student Name</label>

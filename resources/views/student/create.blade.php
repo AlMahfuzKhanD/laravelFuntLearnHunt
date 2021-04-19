@@ -10,7 +10,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             
                 
-                <a href="{{ route('all.student') }}" class="btn btn-info">All Student</a>
+                <a href="{{ url('student') }}" class="btn btn-info">All Student</a>
             
             <hr><br>
             <h3>Student Insert</h3>
@@ -25,7 +25,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('store.student') }}" method="post">
+            <form action="{{ url('student') }}" method="post">
                 @csrf
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
